@@ -1,0 +1,72 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<header class="header">
+  <img src="https://placehold.jp/512x512.png">
+  <h2>APP_NAME</h2>
+</header>
+
+<body>
+  <div class="body">
+    <h4>BUY BGMI ACCOUNTS: Battlegrounds Mobile India Account Shop</h4>
+  </div>
+  <div>
+    <p style="font-size: 18px;">BGMI Players Can Buy Easily Accounts From Here.</p>
+  </div>
+  <div>
+    <h2>Accounts:</h2>
+  </div>
+
+  <!-- Loader -->
+  
+  <div id="data-container"></div>
+  <span class="loader" id="loader"></span>
+
+  <!-- Modal for item details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">
+        <svg style="display: flex;" fill="none" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <div id="details-content"></div>
+      <button class="buy-now" onclick="showPaymentForm()">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Payment Form Modal -->
+  <div id="payment-modal" class="modal">
+    <div class="payment-content">
+      <span class="close" onclick="closePaymentForm()">
+        <svg style="display: flex;" fill="none" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <div class="account-preview">
+        <img id="accountImage" src="" alt="Account Image">
+        <h3 id="accountTitle"></h3>
+      </div>
+      <form id="purchaseForm">
+        <div>
+          <div id="qrcode"></div>
+          <input type="text" id="name" name="name" required placeholder="NAME: ">
+        </div>
+        <div>
+          <input type="email" id="email" name="email" required placeholder="EMAIL: ">
+        </div>
+        <div>
+          <label for="screenshot" style="text-align: left;margin-left: -9pc;">Payment Screenshot:</label>
+          <input type="file" id="screenshot" accept="image/*" required style="background: transparent;">
+          <img id="imagePreview" class="preview-image" style="display: none;">
+        </div>
+        <button type="submit" class="sub-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
